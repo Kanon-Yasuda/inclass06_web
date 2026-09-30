@@ -1,0 +1,282 @@
+/* Halloween colors */
+:root {
+    --pumpkin: #ff7518;
+    --purple: #5a189a;
+    --black: #1a1423;
+    --white: #f6f2f8;
+    --yellow: #ffd60a;
+}
+
+
+/* Basic page */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+/* Header */
+
+header {
+    padding: 20px;
+}
+
+h1 {
+    color: var(--pumpkin);
+}
+
+header p {
+    color: var(--yellow);
+}
+
+
+/* Navigation */
+
+nav a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 15px;
+
+    color: white;
+    background: var(--purple);
+
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: var(--pumpkin);
+}
+
+
+/* Scenes */
+
+.scene {
+    display: none;
+
+    height: 600px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            #090615,
+            #251044
+        );
+}
+
+
+/* Show first scene */
+
+.scenes:not(:has(.scene:target)) #scene1 {
+    display: block;
+}
+
+
+/* Show selected scene */
+
+.scene:target {
+    display: block;
+}
+
+.scene h2 {
+    padding-top: 20px;
+    color: var(--yellow);
+}
+
+.moon {
+    position: absolute;
+
+    top: 80px;
+    right: 15%;
+
+    font-size: 80px;
+}
+
+.cloud {
+    position: absolute;
+
+    font-size: 50px;
+
+    animation: clouds 20s linear infinite;
+}
+
+.cloud1 {
+    top: 120px;
+    left: -100px;
+}
+
+.cloud2 {
+    top: 200px;
+    left: -300px;
+
+    animation-delay: 5s;
+}
+
+
+@keyframes clouds {
+
+    from {
+        left: -150px;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+
+/* Witch */
+
+.witch {
+    position: absolute;
+    top: 280px;
+    left: -200px;
+    font-size: 55px;
+    animation: fly 8s linear infinite;
+}
+
+
+@keyframes fly {
+    from {
+        left: -200px;
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    to {
+        left: 100%;
+        transform: rotate(-5deg);
+    }
+}
+
+.owl {
+    position: absolute;
+    font-size: 35px;
+    animation: owl-fly 10s linear infinite;
+}
+
+.owl1 {
+    top: 180px;
+    left: -50px;
+}
+
+.owl2 {
+    top: 250px;
+    left: -200px;
+    animation-delay: 3s;
+}
+
+
+@keyframes owl-fly {
+    from {
+        left: -100px;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+.trees {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    width: 100%;
+    font-size: 65px;
+    white-space: nowrap;
+    animation: trees 10s linear infinite;
+}
+
+
+@keyframes trees {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100px);
+    }
+}
+
+
+.wagon {
+    position: absolute;
+    bottom: 130px;
+    left: -200px;
+    font-size: 55px;
+    animation: wagon 10s linear infinite;
+}
+
+
+@keyframes wagon {
+    from {
+        left: -200px;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+
+.house {
+    position: absolute;
+    bottom: 110px;
+    left: 20%;
+    font-size: 100px;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    padding-top: 20px;
+    background: #0b0808;
+    font-size: 35px;
+}
+
+footer {
+    padding: 20px;
+    color: var(--yellow);
+}
+
+nav a:focus {
+    outline: 3px solid var(--yellow);
+}
+
+@media (max-width: 600px) {
+    .scene {
+        height: 500px;
+    }
+    .moon {
+        font-size: 55px;
+        right: 10%;
+    }
+    .witch {
+        font-size: 40px;
+    }
+    .trees {
+        font-size: 45px;
+    }
+    .wagon {
+        font-size: 40px;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        animation: none !important;
+    }
+
+}
