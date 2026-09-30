@@ -1,6 +1,6 @@
 # inclass06_web
 
-team members:
+Team Members:
 
 Cassie Nguyen
 
